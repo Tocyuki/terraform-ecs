@@ -1,0 +1,79 @@
+[
+  {
+    "image": "${image_web}",
+    "name": "command",
+    "networkMode": "awsvpc",
+    "entryPoint": [
+      "bin/rails"
+    ],
+    "command": [
+      "--help"
+    ],
+    "environment": [
+      {
+        "name": "RAILS_ENV",
+        "value": "${rails_env}"
+      },
+      {
+        "name": "RAILS_LOG_TO_STDOUT",
+        "value": "TRUE"
+      },
+      {
+        "name": "RAILS_SERVE_STATIC_FILES",
+        "value": "1"
+      },
+      {
+        "name": "DATABASE_URL",
+        "value": "${database_url}"
+      },
+      {
+        "name": "BUGSNAG_API_KEY",
+        "value": "${bugsnag_api_key}"
+      },
+      {
+        "name": "MAIL_HOST",
+        "value": "${mail_host}"
+      },
+      {
+        "name": "MAIL_FROM_DOMAIN",
+        "value": "${mail_from_domain}"
+      },
+      {
+        "name": "FRONTEND_HOST",
+        "value": "${frontend_host}"
+      },
+      {
+        "name": "FACEBOOK_KEY",
+        "value": "${facebook_key}"
+      },
+      {
+        "name": "FACEBOOK_SECRET",
+        "value": "${facebook_secret}"
+      },
+      {
+        "name": "AWS_ACCESS_KEY_ID",
+        "value": "${aws_access_key_id}"
+      },
+      {
+        "name": "AWS_SECRET_ACCESS_KEY",
+        "value": "${aws_secret_access_key}"
+      },
+      {
+        "name": "AWS_DEFAULT_REGION",
+        "value": "${aws_region}"
+      },
+      {
+        "name": "BUCKET_NAME",
+        "value": "${bucket_name}"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-group": "${awslogs_group}",
+        "awslogs-stream-prefix": "task"
+      }
+    }
+  }
+]
