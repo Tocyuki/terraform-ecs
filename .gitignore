@@ -1,0 +1,16 @@
+# Local .terraform directories
+**/.terraform/*
+
+
+# .tfstate files
+# Enable if using s3 backend
+# *.tfstate
+# *.tfstate.*
+*.tfstate.backup
+*.tfstate.lock.info
+
+# Crash log files
+crash.log
+
+# Environment file
+.env
